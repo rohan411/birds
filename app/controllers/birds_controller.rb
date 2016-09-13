@@ -19,14 +19,18 @@ class BirdsController < ApplicationController
   end
 
   def show
+    param! :id,        String, required: true
     @bird = Bird.find(params[:id])
     render json: @bird, status: :ok
   end
 
   def destroy
+    param! :id,        String, required: true
     @bird = Bird.find(params[:id])
     @bird.destroy
-    render nothing: true, status: :ok
+    render meta: { 
+      message: "deleted" 
+    }, status: :ok
   end
 
   private
