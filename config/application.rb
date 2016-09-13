@@ -7,6 +7,10 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 require File.expand_path('../load_env', __FILE__)
 
+require 'mongoid'
+
+Mongoid.load!(File.expand_path('mongoid.yml', './config'))
+
 module Birds
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
