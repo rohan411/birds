@@ -22,6 +22,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'mongoid', '3.2.9'
 gem "mongoid", "~> 4.0.0"
 gem 'bson_ext'
+gem 'rails_param'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -6,13 +6,16 @@ class BirdsController < ApplicationController
   end
 
   def create
-    @bird = Bird.new(birds_params)
-    @bird.added ||= Time.now.utc.strftime("%F")
-    if @bird.save
-      render json: @bird.to_json, status: :created
-    else
-      render nothing: true, status: :bad_request
+    param! :name,        String, required: true
+    param! :family,      String, required: true
+    param! :visible,     Boolean
+    param! :added,       String
+    param! :continents,  Array, required: true do |array,index|
+      array.param! index, String, required: true
     end
+    @bird = Bird.new(birds_params)
+    @bird.save
+    render json: @bird.to_json, status: :created
   end
 
   def show
