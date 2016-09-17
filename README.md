@@ -20,6 +20,9 @@ A rails application for creating and listing birds.
 * run **rake db:mongoid:create_indexes**
 * run **rails server**
 
+## Run Tests
+* run **bundle exec rspec**
+
 ## Request Urls 
 
 GET       **localhost:3000/birds**        To get all the visible birds in the database
