@@ -30,6 +30,13 @@ gem 'rails_param'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'factory_girl_rails'
+  gem 'guard-rspec', '4.5.0'
+  gem 'guard-spork', '2.1.0'
+  gem 'guard-livereload', '2.4.0'
+  gem 'database_cleaner'
+  gem 'shoulda-matchers', require: false
 end
 
 group :development do

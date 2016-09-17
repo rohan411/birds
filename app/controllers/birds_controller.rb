@@ -28,8 +28,10 @@ class BirdsController < ApplicationController
     param! :id,        String, required: true
     @bird = Bird.find(params[:id])
     @bird.destroy
-    render meta: { 
-      message: "deleted" 
+    render json: {
+      meta: { 
+        message: "deleted" 
+      }
     }, status: :ok
   end
 

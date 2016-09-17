@@ -2,7 +2,7 @@ module Concerns::ErrorHandlers
   extend ActiveSupport::Concern
 
   def render_bad_request(e)
-    render json: { meta: { success: false, errors: e.message } }, status: :not_found
+    render json: { meta: { success: false, errors: e.message } }, status: :bad_request
   end
 
   def render_not_found(e)
